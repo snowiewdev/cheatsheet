@@ -71,9 +71,9 @@ git checkout main
 > switch to branch named "main"
 
 ```
-git checkout
+git checkout new-feature
 git commit -am "updated readme.md"
-git push -u origin create-branch
+git push -u origin new-feature
 ```
 > saved changes into the new branch
 
@@ -81,3 +81,19 @@ git push -u origin create-branch
 git branch -d create-branch
 ```
 > delete the branch "create-branch", ususally delete old branch after merging the pull request
+
+## How to submit a pull request
+PR = merge your branch (changes) into the main branch
+
+Within your own branch:
+```
+git diff main
+```
+> show diffence between your current branch and the main branch
+
+```
+git merge main
+```
+> submit your pull request to merge with main branch
+
+Or you can submit a pull request via GitHub interface
