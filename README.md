@@ -54,7 +54,7 @@ git push -u origin main
 
 
 
-## How to Create Branch & save changes in the New Branch in Git
+## How to create branch & save changes in the new branch in Git
 ```
 git branch
 ```
@@ -100,7 +100,7 @@ Then Push your changes in your repo/branch, Submit a pull request via GitHub int
 
 You can also fork a project, makes changes & submit a PR to contribute to open-source projects:D
 
-## How to Undo in git
+## How to undo in git
 ```
 git log
 ```
@@ -115,3 +115,11 @@ git reset --hard theHashCodeInLog
 git reset theHashCodeInLog
 ``` 
 > unstaged changes made after the specified commit (but changes made are still visible but not saved in git)
+
+## How to update your local copy (fetch the latest version copy from GitHub to your local machine)
+
+```
+git pull
+```
+> Get the latest copy of file from GitHub
+> git pull = git fetch + git merge
