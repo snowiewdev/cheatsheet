@@ -122,4 +122,5 @@ git reset theHashCodeInLog
 git pull
 ```
 > Get the latest copy of file from GitHub
+
 > git pull = git fetch + git merge
