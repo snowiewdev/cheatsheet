@@ -1,11 +1,12 @@
 # Git & GitHub Cheatsheet
 
-Hi there, just trying to learn git:)
+Hi there, just trying to learn git :)
+
 
 # Git Commands
 ## How to push local files to GitHub using Git 
 
-1. Open a respository on GitHub
+1. Create a new respository on GitHub
 
 2. Use the following commands in terminal:
 
@@ -20,7 +21,7 @@ git add .
 > ask git to track all files within the folder
 
 ``` 
-git remote add origin "the SSH link of github repository" 
+git remote add origin "SSH link of the github repository" 
 ```
 > add location of GitHub repo & allow Git to know where to upload files to
 
@@ -47,6 +48,23 @@ git status
 > see status of files, tracked or not (add), commited or not
 
 ``` 
-git push -u origin master 
+git push -u origin main 
 ```
 > set upstream default to origin master, allow typing just 'git push' in future (no need to type 'origin master" for current repo)
+
+
+## How to Create Branches in Git
+```
+git branch
+```
+> view all branch in current repo
+
+```
+git checkout -b new-feature
+```
+> create a new branch called 'new-feature'
+
+```
+git checkout main
+```
+> switch to main branch
