@@ -9,8 +9,10 @@ Hi there, just trying to learn git:)
 
 2. Use the following commands in terminal:
 
-  git init
- open a .git file in current folder
+``` 
+git init 
+```
+> open a .git file in current folder
 
 ``` git add . ```
 > ask git to track all files within the folder
