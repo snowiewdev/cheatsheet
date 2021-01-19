@@ -45,13 +45,16 @@ git push origin main
 ``` 
 git status 
 ```
-> see status of files, tracked or not (add), commited or not
+> see status of files, tracked or not (add), committed or not
 
 ``` 
 git push -u origin main 
 ```
 > set upstream default to origin master, allow typing just 'git push' in future (no need to type 'origin master" for current repo)
-
+```
+git pull origin master --allow-unrelated-histories
+```
+> when git pull origin master doesn't work, use this command to tell git allow the action (git stops it default when two repo doesn't seem to connect with each other)
 
 
 ## How to create branch & save changes in the new branch in Git
@@ -119,7 +122,7 @@ git reset theHashCodeInLog
 ## How to update your local copy (fetch the latest version copy from GitHub to your local machine)
 
 ```
-git pull
+git pull origin master
 ```
 > Get the latest copy of file from GitHub
 
