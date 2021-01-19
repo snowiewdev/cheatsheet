@@ -53,7 +53,8 @@ git push -u origin main
 > set upstream default to origin master, allow typing just 'git push' in future (no need to type 'origin master" for current repo)
 
 
-## How to Create Branches in Git
+
+## How to Create Branch & save changes in the New Branch in Git
 ```
 git branch
 ```
@@ -67,4 +68,16 @@ git checkout -b new-feature
 ```
 git checkout main
 ```
-> switch to main branch
+> switch to branch named "main"
+
+```
+git checkout
+git commit -am "updated readme.md"
+git push -u origin create-branch
+```
+> saved changes into the new branch
+
+```
+git branch -d create-branch
+```
+> delete the branch "create-branch", ususally delete old branch after merging the pull request
