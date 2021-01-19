@@ -48,7 +48,7 @@ git status
 > see status of files, tracked or not (add), commited or not
 
 ``` 
-git push -u origin master 
+git push -u origin main 
 ```
 > set upstream default to origin master, allow typing just 'git push' in future (no need to type 'origin master" for current repo)
 
@@ -65,6 +65,6 @@ git checkout -b new-feature
 > create a new branch called 'new-feature'
 
 ```
-git checkout master
+git checkout main
 ```
-> switch to master branch
+> switch to main branch
