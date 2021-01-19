@@ -85,7 +85,7 @@ git branch -d create-branch
 ## How to submit a pull request
 PR = merge your branch (changes) into the main branch
 
-Before submitting a PR, Within your own branch:
+Before submitting a PR, Within your own branch, You can:
 ```
 git diff main
 ```
@@ -97,3 +97,21 @@ git merge main
 > to make sure your current branch is up-to-date with main branch
 
 Then Push your changes in your repo/branch, Submit a pull request via GitHub interface via clicking the 'Compare & pull request' button & "Create pull request"
+
+You can also fork a project, makes changes & submit a PR to contribute to open-source projects:D
+
+## How to Undo in git
+```
+git log
+```
+> show the log all the commits made before
+
+```
+git reset --hard theHashCodeInLog
+```
+> go back to the specified commit without any changes made afterwards ( changes made after the commit are invisible)
+
+```
+git reset theHashCodeInLog
+``` 
+> unstaged changes made after the specified commit (but changes made are still visible but not saved in git)
