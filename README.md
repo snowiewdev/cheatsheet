@@ -85,7 +85,7 @@ git branch -d create-branch
 ## How to submit a pull request
 PR = merge your branch (changes) into the main branch
 
-Within your own branch:
+Before submitting a PR, Within your own branch:
 ```
 git diff main
 ```
@@ -94,6 +94,6 @@ git diff main
 ```
 git merge main
 ```
-> submit your pull request to merge with main branch
+> to make sure your current branch is up-to-date with main branch
 
-Or you can submit a pull request via GitHub interface
+Then Push your changes in your repo/branch, Submit a pull request via GitHub interface via clicking the 'Compare & pull request' button & "Create pull request"
