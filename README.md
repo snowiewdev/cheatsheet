@@ -5,12 +5,12 @@ Hi there, just trying to learn git:)
 # Git Commands
 ## How to push local files to GitHub using Git 
 
-Open a respository on GitHub
+1. Open a respository on GitHub
 
-Use the following commands in terminal:
+2. Use the following commands in terminal:
 
-``` git init ```
-> open a .git file in current folder
+  git init
+ open a .git file in current folder
 
 ``` git add . ```
 > ask git to track all files within the folder
@@ -28,6 +28,7 @@ Use the following commands in terminal:
 > push it to live on GitHub
 
 Tips: 
+
 ``` git status ```
 > see status of files, tracked or not (add), commited or not
 
