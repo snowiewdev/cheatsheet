@@ -53,7 +53,8 @@ git push -u origin main
 > set upstream default to origin master, allow typing just 'git push' in future (no need to type 'origin master" for current repo)
 
 
-## How to Create Branches in Git
+
+## How to Create Branch & save changes in the New Branch in Git
 ```
 git branch
 ```
@@ -67,4 +68,32 @@ git checkout -b new-feature
 ```
 git checkout main
 ```
-> switch to main branch
+> switch to branch named "main"
+
+```
+git checkout new-feature
+git commit -am "updated readme.md"
+git push -u origin new-feature
+```
+> saved changes into the new branch
+
+```
+git branch -d create-branch
+```
+> delete the branch "create-branch", ususally delete old branch after merging the pull request
+
+## How to submit a pull request
+PR = merge your branch (changes) into the main branch
+
+Before submitting a PR, Within your own branch:
+```
+git diff main
+```
+> show diffence between your current branch and the main branch
+
+```
+git merge main
+```
+> to make sure your current branch is up-to-date with main branch
+
+Then Push your changes in your repo/branch, Submit a pull request via GitHub interface via clicking the 'Compare & pull request' button & "Create pull request"
