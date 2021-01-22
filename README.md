@@ -1,6 +1,8 @@
 # Git & GitHub Cheatsheet
 
-Hi there, just trying to learn git :)
+Hi there, just trying to learn git :) 
+
+Here're some notes I made for quick reference.
 
 
 # Git Commands
