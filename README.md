@@ -124,8 +124,20 @@ git reset theHashCodeInLog
 ## How to update your local copy (fetch the latest version copy from GitHub to your local machine)
 
 ```
-git pull origin master
+git ls-remote origin
+```
+> view all available branches
+> 
+```
+git fetch
+```
+> fetch all branches references from remote repo
+> 
+```
+git pull origin [branch_name_here]
 ```
 > Get the latest copy of file from GitHub
 
 > git pull = git fetch + git merge
+> 
+
