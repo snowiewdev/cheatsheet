@@ -19,3 +19,8 @@ npm run serve
 ```
 npm run build
 ```
+if emmet not working, in settings.json, add
+```
+"vue-html": "html",
+"vue": "html"
+```
