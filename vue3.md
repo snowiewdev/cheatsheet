@@ -29,7 +29,7 @@ if emmet not working, in settings.json, add
 ```
 VS code extension list for vueJS
 ```
-1. Vetur
+1. Vetur + Vue VS Code Extension Pack (ignore 2-4)
 2. Vue VSCode Snippets
 3. Bookmarks
 4. npm intellisense
