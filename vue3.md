@@ -7,4 +7,15 @@ sudo npm i -g @vue/cli
 ```
 vue ui
 ```
-
+> create new project, 'babel, router', 'vue3', 'in dedicated files'
+```
+vue create [app-name]
+```
+> start server
+```
+npm run serve
+```
+> create production build
+```
+npm run build
+```
