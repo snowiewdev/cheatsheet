@@ -21,6 +21,16 @@ npm run build
 ```
 if emmet not working, in settings.json, add
 ```
-"vue-html": "html",
-"vue": "html"
+"emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html",
+    "vue": "html"
+  },
+```
+VS code extension list for vueJS
+```
+1. Vetur
+2. Vue VSCode Snippets
+3. Bookmarks
+4. npm intellisense
 ```
