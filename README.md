@@ -141,3 +141,11 @@ git pull origin [branch_name_here]
 > git pull = git fetch + git merge
 > 
 
+## Merge others code
+
+```
+git checkout [branch you wanna merge]
+git pull
+git checkout [your own branch]
+git merge [branch you wanna merge]
+```
