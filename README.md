@@ -149,3 +149,13 @@ git pull
 git checkout [your own branch]
 git merge [branch you wanna merge]
 ```
+
+## When being asked about entering msg during merge
+
+```
+press "i" (i for insert)
+write your merge message
+press "esc" (escape)
+write ":wq" (write & quit)
+then press enter
+```
