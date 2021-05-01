@@ -159,3 +159,9 @@ press "esc" (escape)
 write ":wq" (write & quit)
 then press enter
 ```
+
+## Getting single commit from other branch
+
+```
+git cherry-pick [commit ID]
+```
