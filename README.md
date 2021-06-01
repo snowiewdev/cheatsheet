@@ -165,3 +165,8 @@ then press enter
 ```
 git cherry-pick [commit ID]
 ```
+
+## Reset back to specific commit & abort all local changes
+```
+git reset --hard [commit ID]
+```
