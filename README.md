@@ -170,3 +170,14 @@ git cherry-pick [commit ID]
 ```
 git reset --hard [commit ID]
 ```
+
+## Delete branches locally & remotely
+local
+```
+git branch -d branch_name
+```
+
+remote:
+```
+git push -d origin <branch_name>
+```
