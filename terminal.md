@@ -98,7 +98,8 @@ nano new-file.txt
 
 Bottom will show relevant instructions
 ```
-^x  =  Ctrl + 'X' 
+^x  =  Ctrl + 'X' -> exit 
+^O  =  Ctrl + 'O' -> save
 ```
 
 ## Show content inside a file
