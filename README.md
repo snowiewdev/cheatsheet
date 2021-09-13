@@ -186,3 +186,24 @@ remote:
 ```
 git push -d origin <branch_name>
 ```
+
+## Rename Branches
+On the branch you want to rename:
+```
+git branch -m new-name
+```
+
+Delete the old-name remote branch and push the new-name local branch.
+Stay on the target branch and:
+```
+git push origin :old-name new-name
+```
+
+Reset the upstream branch for the new-name local branch.
+Switch to the target branch and then:
+```
+git push origin -u new-name
+```
+
+
+
