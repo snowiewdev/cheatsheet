@@ -73,7 +73,8 @@ Move file up by one folder:
 mv new-file-copy.txt ../new-file-copy.txt
 ```
 
-## Rename file
+## 
+file
 Rename the file by giving it another name at the same directory:
 ```
 mv new-file-copy.txt file-copy.txt
@@ -143,7 +144,10 @@ sudo apt-get upgrade filezilla
 sudo apt-get remove filezilla
 ```
 
-
+## grant permission to run script
+```
+chmod u+x ???.sh
+```
 
 
 
