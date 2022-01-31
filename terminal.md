@@ -101,6 +101,7 @@ Bottom will show relevant instructions
 ```
 ^x  =  Ctrl + 'X' -> exit 
 ^O  =  Ctrl + 'O' -> save
+^W  =. Ctrl + 'W' -> search
 ```
 
 ## Show content inside a file
