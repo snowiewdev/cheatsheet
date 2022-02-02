@@ -16,12 +16,14 @@ npx tailwindcss init
 ....
 ```
 
-Dark Mode / Light Mode 
+Dark Mode / Light Mode <br/>
 https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually
 
 Set Up SASS in Nuxtjs <br/>
 https://dev.to/nbhankes/using-sass-in-nuxt-js-4595
 
+Google Font in Nuxt <br/>
+https://google-fonts.nuxtjs.org/setup
 
 ### VS Code Extensions
 ```
