@@ -1,8 +1,24 @@
 # Terminal Basics
 
+To use terminal on windows, you can go to powershell (use as admin), then run 
+```
+wsl --install
+```
+to install the linux/ubuntu interface easily
+
 ## Current path
 ```
 pwd
+```
+
+## Current user
+```
+whoami
+```
+
+## Check manual of command
+```
+man whoami -> will show how whoami works
 ```
 
 ## List all files
@@ -12,11 +28,16 @@ List all files:
 ls  
 ```
 
+List all files in "folder1"
+```
+ls folder1
+```
+
 List files with info: allow you to know access of file (d:directory, r:read, w: write, x:execute)
 ```
 ls -al
+ls -l
 ```
-
 
 List all files including hidden files
 ```
@@ -27,6 +48,7 @@ ls -a
 ```
 clear
 ```
+or Ctrl + L
  
 ## cd (Change Directory)
 Go to specific file:
@@ -53,7 +75,14 @@ cd
 
 ## Create new directory/ folder
 ```
-mkdir new directory
+mkdir new-folder
+```
+
+Other ways to use mkdir
+```
+mkdir folder1 folder2
+mkdir folder1/innerfolder
+mkdir -p folder1/innerfolder/innerinnerfolder   -> give permission to create all neccessary folder (default mkdir cannot)
 ```
 
 ## Create new file
@@ -65,6 +94,11 @@ touch index.html
 Copy the text file into new-folder & named new-file-copy.txt:
 ```
 cp new-file.txt new-folder/new-file-copy.txt
+```
+
+Copy whole folder with files inside to anthoer folder (all in folder1 will be cloned to folder2)
+```
+cp -rv folder1 folder2
 ```
 
 ## Move file
@@ -86,9 +120,14 @@ rm new-text-copy.txt
 ```
 
 ## Delete folder
--r : tell the terminal to remove everything inside the folder & also the folder itself
+-r : tell the terminal to remove everything inside the folder & also the folder itself (recursively)
 ```
 rm -r new-folder
+```
+
+## Remove folder with result message
+```
+rm -v folder1 folder2  -> removed 'folder1', removed 'folder2'
 ```
 
 ## Edit File
@@ -147,7 +186,7 @@ sudo apt-get remove filezilla
 
 ## grant permission to run script
 ```
-chmod u+x ???.sh
+chmod u+x some_script.sh
 ```
 
 
