@@ -20,6 +20,7 @@ whoami
 ```
 man whoami -> will show how whoami works
 ```
+Hit Ctrl+C to exit out of the long page
 
 ## List all files
 
@@ -37,6 +38,7 @@ List files with info: allow you to know access of file (d:directory, r:read, w: 
 ```
 ls -al
 ls -l
+ls -lh (human readable)
 ```
 
 List all files including hidden files
@@ -96,7 +98,7 @@ Copy the text file into new-folder & named new-file-copy.txt:
 cp new-file.txt new-folder/new-file-copy.txt
 ```
 
-Copy whole folder with files inside to anthoer folder (all in folder1 will be cloned to folder2)
+Copy whole folder with files inside to another folder (all in folder1 will be cloned to folder2)
 ```
 cp -rv folder1 folder2
 ```
@@ -143,8 +145,51 @@ Bottom will show relevant instructions
 ^W  =. Ctrl + 'W' -> search
 ```
 
+## Expansion
+```
+*      -> all/ anything
+*.??   -> ?? = 2 character extension
+echo {a,b,c}    -> a b c
+echo {1..5}     -> 1 2 3 4 5
+touch main.{css,js}   -> main.css main.js
+```
+
+## gzip
+zip the file using gzip
+```
+gzip -k largefile.txt -> output largefile.gz while keeping original file
+```
+
+unzip the file
+```
+gunzip largefile.gz
+gzip -d largefile.gz
+```
+
+## tar 
+take files into archive without file size compression, e.g.
+output archive.tar which contains the three files
+```
+tar -cf archive.tar song1.txt song2.txt song3.txt
+```
+
+extract files from archive.tar
+```
+tar -xf archive.tar
+```
+
+tar & gzip at once
+```
+tar -czf bundle.tar.gz file1.txt file2.txt file3.txt
+```
+
+undo tar & zip at once
+```
+tar -xf bundle.tar.gz
+```
+
 ## Show content inside a file
-cat means concat content inside file to terminal
+cat means show content inside file to terminal
 ```
 cat new-file.txt
 ```
@@ -152,6 +197,11 @@ cat new-file.txt
 list content of both files:
 ```
 cat file-1.txt file-2.txt
+```
+
+put them inside a single file
+```
+cat file-1.txt file-2.txt > all.txt
 ```
 
 ## Redirect content operator
@@ -170,12 +220,30 @@ echo => prints content
 echo hi >> combined-file.txt
 ```
 
-## Show Manual of the terminal command
-will list out manual for the 'ls' command:
+## diff
 ```
-man ls
+diff file1.txt file2.txt      -> show difference between 2 files
+diff -y file1.txt file2.txt   -> show diff side by side
 ```
-Hit Ctrl+C to exit out of the long page
+
+## grep
+find inside file that matches the word listed
+```
+grep green song.txt -> highlight the found keyword & display the content
+```
+
+## find
+find all files with name containing 'project'
+```
+find . -name '*project*'
+```
+
+## history
+show the history of commands runned before in terminal
+```
+history
+!5      -> run the command again in line 5 of the command history
+```
 
 ## Install/ upgrade/ remove packages
 ```
@@ -184,11 +252,57 @@ sudo apt-get upgrade filezilla
 sudo apt-get remove filezilla
 ```
 
+
 ## grant permission to run script
 ```
 chmod u+x some_script.sh
 ```
 
+## wc
+show word count, line count & byte count of file
+```
+wc file-1.txt
+```
+
+list the total word count, line count & byte count in current folder (| = pipe)
+```
+ls -l | wc
+```
+
+## Head & Tail
+list first 10 lines or last 10 lines of file
+```
+head wow.txt
+head wow.text -n 100 -> 100 lines
+tail wow.txt
+tail wow.text -n 100 -> 100 lines
+```
+
+## sort, uniq
+sort content ascendin (ABC..)
+```
+sort file.txt
+sort -n file.txt -> in number
+sort -un file.text -> sort unqiue number
+sort -u flavors.txt -> list unqiue line only
+```
+
+## Date
+show current time
+```
+date
+```
+
+## Process related commands
+```
+ps
+bg 1&
+top
+kill 
+killall
+jobs
+sleep
+```
 
 
 
