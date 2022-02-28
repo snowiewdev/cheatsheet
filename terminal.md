@@ -188,6 +188,112 @@ undo tar & zip at once
 tar -xf bundle.tar.gz
 ```
 
+## sudo
+run command using the highest authority (root user)
+```
+sudo nano config.php
+```
+
+## chown
+change owner of file/ folder, so that we can edit it
+```
+chown <owner> <file/folder>
+sudo chown Elvis file1.txt
+```
+
+```
+groups -> list groups who can read the files
+```
+
+## Permission
+```
+drwxr-xr-x
+```
+first character:   d:directory, -: regular file, c:character special file, l:symbolic link
+
+next nine characters:
+```
+owner  group  world
+rwx    rw-    r--
+```
+r:read     -- file can be listed (but cannot enter)
+w:write    -- file can be modified
+x:execute  -- file/directory can be entered or 'cd' into, script/program can be executed
+
+
+## grant permission
+chmod: change mode
+```
+chmod <mode> <file>
+u: user (owner of file)
+g: group
+o: others (world)
+a: all of the above
+-: remove permission
++: grant permission
+=: set a permission & remove others
+r,w,x same as above
+```
+
+add read permission to everyone
+```
+chmod a+r file.txt
+```
+
+add write permission to the group
+```
+chmod g+w file.txt
+```
+
+everyone can only read
+```
+chmod a=r file.txt
+```
+
+grant user execute permission on script
+```
+chmod u+x some_script.sh
+```
+
+## chmod octals
+base 8 representation of file permission
+```
+octal   binary   file mode
+0       000      ---
+1       001      --x
+2       010      -w-
+3       011      -wx
+4       100      r--
+5       101      r-x
+6       110      rw-
+7       111      rwx
+```
+
+allow owner to do all things, others can only read & execute the file/command
+```
+chmod 755 file.txt   ->   -rwxr-xr-x
+```
+
+
+## who
+display the users logged into the system
+```
+who -> mary tony tom
+```
+
+## su
+switch user
+```
+su elvis -> then login with his password & switched to elvis
+```
+
+## passwd
+change password
+```
+passwd
+passwd elvis
+```
+
 ## Show content inside a file
 cat means show content inside file to terminal
 ```
@@ -245,19 +351,6 @@ history
 !5      -> run the command again in line 5 of the command history
 ```
 
-## Install/ upgrade/ remove packages
-```
-sudo apt-get install filezilla
-sudo apt-get upgrade filezilla
-sudo apt-get remove filezilla
-```
-
-
-## grant permission to run script
-```
-chmod u+x some_script.sh
-```
-
 ## wc
 show word count, line count & byte count of file
 ```
@@ -267,6 +360,13 @@ wc file-1.txt
 list the total word count, line count & byte count in current folder (| = pipe)
 ```
 ls -l | wc
+```
+
+## xargs
+pipe may not work sometimes when the target command needs to accept arguments,
+this is when xargs can be used to pass the value as arguments into the commands
+```
+find . -size +1M | xargs ls -l
 ```
 
 ## Head & Tail
@@ -285,6 +385,13 @@ sort file.txt
 sort -n file.txt -> in number
 sort -un file.text -> sort unqiue number
 sort -u flavors.txt -> list unqiue line only
+```
+
+## Install/ upgrade/ remove packages
+```
+sudo apt-get install filezilla
+sudo apt-get upgrade filezilla
+sudo apt-get remove filezilla
 ```
 
 ## Date
