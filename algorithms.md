@@ -97,15 +97,17 @@ printLinkedList(a);    // with show A, B, C, D
 
 ## Stack
 - one-ended linear data structure that haves 2 primary operation -- push & pop, and a top pointer
-- examples: browser history forward & backward, undo mechanism in editor, check brackets in code editor [[{}]()]
+- last in first out
+- examples: browser history forward & backward, undo mechanism in editor, check brackets in code editor [[{}]()], depth first search(DFS)
 - Push, Pop, Peek: O(1)
 - Search: O(n)
 
 ## Queue
 - linear data structure that haves 2 primary operation -- enqueue & dequeue 
+- first in first out
 - enqueue: add element to the back of the list, O(1)
 - dequeue/polling: remove element fromt the top of the list, O(1)
-- examples: line up in movie theatre, web server request(first come first serve)
+- examples: line up in movie theatre, web server request(first come first serve), breath first search(BFS)
 
 ## Priority Queue
 - a normal queue but each element has a certain priority
@@ -124,4 +126,8 @@ printLinkedList(a);    // with show A, B, C, D
 
 ## Hashtable
 - constant time lookup & update through mapping from a key to a value
-- e.g. object
+- e.g. object in javascript, dictionary in python
+
+## Graphs
+
+## Trees
