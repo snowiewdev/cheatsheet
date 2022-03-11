@@ -95,19 +95,19 @@ const printLinkedList = (head) => {
 printLinkedList(a);    // with show A, B, C, D
 ```
 
-### Stack
+## Stack
 - one-ended linear data structure that haves 2 primary operation -- push & pop, and a top pointer
 - examples: browser history forward & backward, undo mechanism in editor, check brackets in code editor [[{}]()]
 - Push, Pop, Peek: O(1)
 - Search: O(n)
 
-### Queue
+## Queue
 - linear data structure that haves 2 primary operation -- enqueue & dequeue 
 - enqueue: add element to the back of the list, O(1)
 - dequeue/polling: remove element fromt the top of the list, O(1)
 - examples: line up in movie theatre, web server request(first come first serve)
 
-### Priority Queue
+## Priority Queue
 - a normal queue but each element has a certain priority
 - heap: tree-based data structure that satisfies heap invariant, the top-node is ordered with respect to its child nodes & all nodes in the heap
 - min heap: from smallest to largest
@@ -122,6 +122,6 @@ printLinkedList(a);    // with show A, B, C, D
   4  5 4  7
 ```
 
-### Hashtable
+## Hashtable
 - constant time lookup & update through mapping from a key to a value
 - e.g. object
