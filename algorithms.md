@@ -128,6 +128,12 @@ printLinkedList(a);    // with show A, B, C, D
 - constant time lookup & update through mapping from a key to a value
 - e.g. object in javascript, dictionary in python
 
+## Union Find
+- 2 primary actions -- find & union
+- find: find the root of that component by following the parent nodes until a self loop is reached 
+- unify: unify two elements which are root nodes of each component, if root node are different, make one of the root nodes be parent of the other
+- example: Kruskal's Minimum Spanning Tree
+
 ## Graphs
 
 ## Trees
