@@ -1,35 +1,43 @@
+## Client-server Model
+- client: web browser/desktop application that make requests to computer server
+- server: can be Amazon EC2, like virtual server
+
 ## Cloud Computing
+- On-demand delivery of IT resources and applications through the internet with pay-as-you-go pricing
+
 ### Advantages
 - services on demand
 - pay only for what you use (variable expense)
 - cost optimization (maintainence/ run data center handled by AWS)
 - can scale in & out as needed, no need to guess capacity
-- speed & agility, quickly deployed worldwide
-- able to use aws globle infrastructure
+- increase speed & agility, quickly deployed worldwide
+- able to use aws global infrastructure
 
 ### Cloud computing deployment models
-- Cloud, on premises, hybrid
+- Cloud-based deployment: run, migrate, design & build application in the cloud
+- On-premises deployment: private cloud deployment, deploy resources by using virtualization & resource management tools
+- Hybrid deployment: connect cloud-based resources to on-premises infrastructure, like legacy IT applications
 
 
 ## Amazon EC2
-- use secure, sizable compute capacity
-- boot server instance in minutes
-- pay only for what you use
+- use secure, resizable compute capacity in cloud as EC2 instance (virtual server)
+- boot/launch server instance in minutes
+- pay only for what you use, the compute time when an instance is running
 
 ### Instance type
 - General Purpose: balance compute, memory & networking resource
-- Compute Optimize: High performance processing (CPU)
+- Compute Optimized: High performance processing (CPU), like gaming server
 - Memory Optimized: for high-performance database
-- Accelerated Computing: streaming & graphic workload
-- Storage Optimized
+- Accelerated Computing: uses hardware accelerators, for handling streaming & graphic workload
+- Storage Optimized: for workloads require high, sequential read & write access to large dataset, data warehouse
+- Input/Output Operations Per Second (IOPS)
 
 ### Pricing Options
 - On-Demand: for short-term, irregular worklaod (first time)
-- Spot
-- Reserved: have discount over on-demannd pricing (1 or 3 year)
-
-- Dedicated instance
-- Dedicated server
+- Spot Instance
+- Reserved Instance: have discount over on-demannd pricing (1 or 3 year)
+- Dedicated Instance
+- Dedicated Server
 
 ### Auto-Scaling
 - scale capacity as computing requirement change
