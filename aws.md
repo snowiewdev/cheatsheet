@@ -4,6 +4,7 @@
 
 ## Cloud Computing
 - On-demand delivery of IT resources and applications through the internet with pay-as-you-go pricing
+- the cloud usage from large number of customers results in lower pay-as-you-go prices, thus saving cost
 
 ### Advantages
 - services on demand
@@ -26,18 +27,18 @@
 
 ### Instance type
 - General Purpose: balance compute, memory & networking resource
-- Compute Optimized: High performance processing (CPU), like gaming server
+- Compute Optimized: High performance processing (CPU), like gaming server and batch-processing
 - Memory Optimized: for high-performance database
 - Accelerated Computing: uses hardware accelerators, for handling streaming & graphic workload
 - Storage Optimized: for workloads require high, sequential read & write access to large dataset, data warehouse
 - Input/Output Operations Per Second (IOPS)
 
 ### Pricing Options
-- On-Demand: for short-term, irregular worklaod (first time)
-- Spot Instance
-- Reserved Instance: have discount over on-demannd pricing (1 or 3 year)
-- Dedicated Instance
-- Dedicated Server
+- On-Demand: for short-term, irregular worklaod that cannot be interrupted(first time)
+- Spot Instance: can withstand interruption, for testing or short-term use with flexible start & end times
+- Savings Plan: have discount package over on-demannd pricing (1 or 3 year term)
+- Dedicated Instance/ Reserved Instance: biling discount with (1 or 3 year term)
+- Dedicated Server: physical server with EC2 fully dedicated for your use
 
 ### Auto-Scaling
 - scale capacity as computing requirement change
@@ -47,7 +48,7 @@
 - distribute traffic across resources
 
 ### Communication between server
-- Amazon Simple Notification Service (Amazon SNS)
+- Amazon Simple Notification Service (Amazon SNS), like topic subscription
 - Amazon Simple Queue Service (Amazon SQS)
 
 ### AWS Lambda 
@@ -67,7 +68,7 @@
 
 ## AWS Global Infrastructure
 - select region based on proximity to customer, available services in region, pricing, compliance with data governance & legal requirement
-- region contains 2 or more availablity zones (AZ) (data center)
+- a Region contains 2 or more Availablity Zones (AZ) (AZ = 1 or more Data Center)
 - AWS management console, AWS CLI, SDKs
 
 ### Amazon CloudFront
@@ -76,15 +77,16 @@
 - 1TB free traffic in
 
 ### AWS Outposts
-- extend AWS infrastructure & service 
+- extend AWS infrastructure & service to your on-premise (private) data center
 
 ## Networking
 ### Amazon Virtual Private Cloud (VPC)
 - allow you to launch resources in a virtual network that you define
 - subnet: region that you define to control access
-- public subnet (EC2 instance), provide Internet Gateway & allow user to access
-- private subnet (database), provide virtual private gateway via VPN connection for limited user to access
-- AWS direct connect
+- public subnet (EC2 instance), provide Internet Gateway & allow public user to access
+- private subnet (database), provide virtual private gateway via VPN connection for limited user to access, used to isolate db
+- AWS direct connect: connection between on-premise data center & the VPC
+- Internet Gateway is a component used to connect VPC to the Internet
 
 Network Traffic: ACL -> security group -> public subnet
 
@@ -98,9 +100,12 @@ Network Traffic: ACL -> security group -> public subnet
 
 ### Domain Name System
 - convert domain name to IP address via DNS resolver
-- Amazon Route 53 (DNS), allow purchase of domain name
+- Amazon Route 53 (DNS), use port 53 so it is how it named, allow purchase of domain name
 
 ## Storage
+- instance store: for temporary data store only
+- EBS for long term data storage, allow data retention
+
 ### Block storage 
 - = Hard disk
 - Instance store: store data only when running, once instance is turned off, data will be gone, like RAM
@@ -111,17 +116,19 @@ Network Traffic: ACL -> security group -> public subnet
 - each object consist of Data, Metadata, Key
 - store object in buckets
 - set permission to control access to object
-- AWS Simple Storage Service (S3)
+- AWS Simple Storage Service (S3), 3 copies
 
 ### Storage Class for Object Storage
 - S3 Standard: for frequently accessed data
 - S3 Standard-IA: infrequent-access
 - S3 One-Zone IA: cheaper
 - S3 Intelligent-Tiering*: for data storage with unknown pattern, will dynamically 
+- S3 Glacier/ S3 Glacier Deep Archive - for archival data, for data not frequently used
 
 ### File Storage
 - clients can access data that is stored in shared file folders
 - AWS Elastic File System (EFS): store data in scalable file system
+- EBS volume store data in single Availabilty Zone, EFS store data across multiple Availability Zone
 
 ## Database
 ### Relational Database
@@ -154,7 +161,7 @@ Network Traffic: ACL -> security group -> public subnet
 ### IAM
 - root user: only one, create first IAM user & give permission to other user
 - IAM user
-- IAM policy: control access permission of users
+- IAM Policy: a document that control access permission (grant/denies) of users
 - IAM group: collection of IAM users, & attach IAM policy to that group for easier management
 - IAM role: assume role & permission
 
@@ -162,7 +169,7 @@ Network Traffic: ACL -> security group -> public subnet
 - provide extra layer of protection of your account
 
 ### AWS Artifact
-- provide access to security & compliance report, online agreements
+- provide access to security & compliance report, online agreements with AWS
 - Customer Compliance Center: provide resources for compliance 
 
 ### AWS Web Application Firewall (WAF)
@@ -177,22 +184,23 @@ Network Traffic: ACL -> security group -> public subnet
 - provide assessment on EC2
 
 ### AWS Key Managment Service (KMS)
-- used to encrypt & descrypt data
+- used to encrypt & descrypt data, create cryptographic keys (public & private keys)
 
 ### Amazon GuardDuty
 - provide intelligent threat detection 
 
 ## Monitoring & Analytics
 ### Amazon CloudWatch
-- dashboard that allow you to monitor & access metrics of your infrasture & application
+- dashboard that allow you to monitor & access metrics/performance of your infrastructure & application
 - allow you to set alert when needed
 
 ### Amazon CloudTrail
 - track user activities and API requests (what, who, when, how)
+- filter logs to assist with operational analysis & troubleshooting
 
 ### AWS Trusted Advisor
 - provide real-time guidance for improving AWS environment
-- e.g. cost optimization, performance, security, fault torlerance, service limit
+- guidance/checking on 5 areas, i.e. cost optimization, performance, security, fault torlerance, service limit
 
 ## Pricing & Support
 - pay as you go, only charge on data transferring out
@@ -201,15 +209,16 @@ Network Traffic: ACL -> security group -> public subnet
 - AWS Cost Explorer: tool allow you to visualize & manage your AWS application cost
 - Basic Support: free tier support but limited
 - Developer Support: practice guidiance
-- Business Support: all AWS Trusted Advisor Checks
+- Business Support: includes all AWS Trusted Advisor Checks
 - Enterprise Support: has Technical Account Manager (TAM) support
 - AWS Marketplace: provide listing of third-party software that runs on AWS, e.g. data analytics
+- Consolidated billing: combine usage across amount to get discount
 
 ## Migration
 - 6 areas to consider for cloud migration to AWS
 - Business perspective: business, people (staffs), governance
 - Technical perspective: platform, security, operations (minimize workload?)
-- Six Migration Stratgies: rehost, replatform, reafactor/rearchitect, repurchase (need migration) || retain, retire (No need migration)
+- Six Migration Stratgies to identify whether migration is needed: rehost, replatform, reafactor/rearchitect, repurchase (need migration) || retain, retire (No need migration)
 
 ### AWS Snow Family
 - Physical Device that helps you to transfer data/ migration
@@ -219,8 +228,12 @@ Network Traffic: ACL -> security group -> public subnet
 
 ### Well-Architect Framework
 - Operational Excellence: run & monitor system
-- Security: protect information & assets
+- Security: protect information & assets, permission
 - Reliability: recovery procedure, stability, able to scale
 - Performance efficiency
 - Cost Optimization
 
+### Exam notes
+- max score 1000, 700 passing score
+- 90 mins, all MCQs (~60), +/- 30 min extension (ESL +30 mins)
+- Certification -> Exam Registration
