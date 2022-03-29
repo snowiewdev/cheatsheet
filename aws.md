@@ -137,3 +137,82 @@ Network Traffic: ACL -> security group -> public subnet
 - Amazon Managed Blockchain: decentralized database
 - Amazon ElastiCache: caching layer
 - Amazon DynamoDB Accelerator: improve DynamoDB response time
+
+## Security
+- shared responsibility model between AWS & customer
+- AWS: network infrastructure, edge
+- customer: patching software, HTTP to HTTPS
+
+### IAM
+- root user: only one, create first IAM user & give permission to other user
+- IAM user
+- IAM policy: control access permission of users
+- IAM group: collection of IAM users, & attach IAM policy to that group for easier management
+- IAM role: assume role & permission
+
+### Multi-factor authenication (MFA)
+- provide extra layer of protection of your account
+
+### AWS Artifact
+- provide access to security & compliance report, online agreements
+- Customer Compliance Center: provide resources for compliance 
+
+### AWS Web Application Firewall (WAF)
+- handle malicious request from hacker
+
+### AWS Shield
+- provide protection against DDoS attacks, default contains basic shield
+- DoS (Denial of service attack)
+- DDoS (Distributed Denial of service attack)
+
+### AWS inspector
+- provide assessment on EC2
+
+### AWS Key Managment Service (KMS)
+- used to encrypt & descrypt data
+
+### Amazon GuardDuty
+- provide intelligent threat detection 
+
+## Monitoring & Analytics
+### Amazon CloudWatch
+- dashboard that allow you to monitor & access metrics of your infrasture & application
+- allow you to set alert when needed
+
+### Amazon CloudTrail
+- track user activities and API requests (what, who, when, how)
+
+### AWS Trusted Advisor
+- provide real-time guidance for improving AWS environment
+- e.g. cost optimization, performance, security, fault torlerance, service limit
+
+## Pricing & Support
+- pay as you go, only charge on data transferring out
+- AWS Pricing Calculator: cost estimation
+- AWS Budgets: tool that allow you set thresholds for service usage & costs
+- AWS Cost Explorer: tool allow you to visualize & manage your AWS application cost
+- Basic Support: free tier support but limited
+- Developer Support: practice guidiance
+- Business Support: all AWS Trusted Advisor Checks
+- Enterprise Support: has Technical Account Manager (TAM) support
+- AWS Marketplace: provide listing of third-party software that runs on AWS, e.g. data analytics
+
+## Migration
+- 6 areas to consider for cloud migration to AWS
+- Business perspective: business, people (staffs), governance
+- Technical perspective: platform, security, operations (minimize workload?)
+- Six Migration Stratgies: rehost, replatform, reafactor/rearchitect, repurchase (need migration) || retain, retire (No need migration)
+
+### AWS Snow Family
+- Physical Device that helps you to transfer data/ migration
+- AWS Snowcone: 8TB of storage
+- AWS Snowball device: 1PB of storage (1000TB = 1PB)
+- AWS Snowmobile: transfer up to 100PB of Data
+
+### Well-Architect Framework
+- Operational Excellence: run & monitor system
+- Security: protect information & assets
+- Reliability: recovery procedure, stability, able to scale
+- Performance efficiency
+- Cost Optimization
+
