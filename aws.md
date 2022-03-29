@@ -41,60 +41,88 @@
 - Dedicated Server: physical server with EC2 fully dedicated for your use
 
 ### Auto-Scaling
-- scale capacity as computing requirement change
-- Minimum instance, desired instance, scale as needed instance (auto-scaling group)
+- scale capacity (add/remove EC2 instance) as computing requirement/application demand change
+- Dynamic Scaling: responds to changing demand
+- Predictive Scaling: schedule right number of EC2 instance based on predicted demand
+- Auto-Scaling group: Minimum instance, desired instance, scale as needed instance/ maximum capacity
 
 ### Elastic Loading-Balancing (ELB)
-- distribute traffic across resources
+- automatically distribute application traffic across resources, like EC2
+- Need ELB for auto-scaling to apply
 
 ### Communication between server
-- Amazon Simple Notification Service (Amazon SNS), like topic subscription
-- Amazon Simple Queue Service (Amazon SQS)
+- Monolithic Application: an application with tightly coupled componetns, if a single component fail, other fails too, so as the application
+- Microservices Approach: application components are loosely coupled, prevents entire application from failing when one fails
+- Amazon Simple Notification Service (Amazon SNS): a publish/ subscription serivce
+- Amazon Simple Queue Service (Amazon SQS): message queuing service
 
 ### AWS Lambda 
 - Serverless computing service
-- run code without managing server, only pay for compute time while code is running
+- run code without managing server, only pay for compute time while code is running, flexible to scale serverless app automatically
 - upload code to Lambda, set code to trigger from an event source, code runs only when triggered, pay only for compute time you used
 
 ### AWS Elastic Container Service (ECS)
-- run & scale containerized application
+- container: standard way to package application code & dependencies into a single object
+- container enables us to build, test & deploy application quickly
+- container management system that allows you to run & scale containerized application, like Docker container
 
 ### AWS Elastic Kubernetes Service (EKS)
-- run & scale Kubernetes application
+- container management system that allows you to run & scale Kubernetes application
 
 ### AWS Fargate
 - Run serverless containers with Amazon ECS / Amazon EKS
+- no need to provide/manage server
 
 
 ## AWS Global Infrastructure
-- select region based on proximity to customer, available services in region, pricing, compliance with data governance & legal requirement
+- select region based on: Proximity to customer, Available Services in region, Pricing, Compliance with data governance & legal requirement
 - a Region contains 2 or more Availablity Zones (AZ) (AZ = 1 or more Data Center)
-- AWS management console, AWS CLI, SDKs
 
 ### Amazon CloudFront
 - Content Delivery Network (CDN) to deliver caching static files in Edge Location (~3xx)
+- Edge Location: site used to store cached copies of content for faster delivery
 - improve site speed & reducing loading workload on original server
-- 1TB free traffic in
+- 1TB free traffic
 
 ### AWS Outposts
 - extend AWS infrastructure & service to your on-premise (private) data center
 
+## Ways to accessing and managing AWS services
+### AWS management console  
+- web-based interface for accessing and managing AWS services 
+- includes wizards and automated workflows that can simplify the process of completing tasks
+
+### AWS command line interface (CLI)
+- enables you to control multiple AWS services directly from the command line within one tool
+
+### Software development kits (SDKs)
+- allow you to use AWS services through an API designed for your programming language or platform
+
+
 ## Networking
 ### Amazon Virtual Private Cloud (VPC)
 - allow you to launch resources in a virtual network that you define
-- subnet: region that you define to control access
-- public subnet (EC2 instance), provide Internet Gateway & allow public user to access
-- private subnet (database), provide virtual private gateway via VPN connection for limited user to access, used to isolate db
-- AWS direct connect: connection between on-premise data center & the VPC
-- Internet Gateway is a component used to connect VPC to the Internet
+- Internet Gateway: a component used to connect VPC to the Internet, applow public traffice from Internet to access your VPC
+- Virtual Private Gateway: a component that allows protected internet traffic to enter into the VPC
+- AWS Direct Connect: dedicated private connection between on-premise data center & the VPC
 
-Network Traffic: ACL -> security group -> public subnet
+- Subnet: a section of VPC that you define to control access of group resources
+- In a VPC, subnets can communicate with each other
+- Public Subnet (EC2 instance): provide Internet Gateway & allow public user to access
+- Private Subnet (database): provide virtual private gateway via virtual private network(VPN) connection for limited user to access, used to isolate db
+
+
+Network Traffic: A packet is a unit of data sent over the internet or a network
+
+Client Packet -> Internet Gateway -> Network ACL -> Security group -> public subnet
 
 ### Security Group
-- default denies all inbound traffic
-- stateful packet filtering (check in-connection only)
+- virtual firewall that controls inbound and outbound traffic for an Amazon EC2 instance
+- default denies all inbound traffic, allows all outbound traffic
+- stateful packet filtering (check in-connection only), remember previous decision made for incoming packets
 
 ### Network Access Control List (ACL)
+- virtual firewall that control inbound & outbound traffic at subnet level
 - default allow all access/ traffic 
 - stateless packet filtering (check in-connection & out-connection)
 
@@ -103,14 +131,14 @@ Network Traffic: ACL -> security group -> public subnet
 - Amazon Route 53 (DNS), use port 53 so it is how it named, allow purchase of domain name
 
 ## Storage
-- instance store: for temporary data store only
-- EBS for long term data storage, allow data retention
+- instance store: provides temporary block-level storage for EC2 instnace, a disk storage physically attached to host computer
+- Amazon Elastic Block Storage (EBS) for long term data storage, allow data retention even there's termination of EC2
 
 ### Block storage 
 - = Hard disk
 - Instance store: store data only when running, once instance is turned off, data will be gone, like RAM
 - Elastic Block store: store things permanently
-- EBS snapshot: back up of data, only data that has changed 
+- EBS snapshot: incremental backup of data, first backup = full backup, subsequent backup: only data that has changed recently is backed up
 
 ### Object Storage
 - each object consist of Data, Metadata, Key
@@ -119,39 +147,42 @@ Network Traffic: ACL -> security group -> public subnet
 - AWS Simple Storage Service (S3), 3 copies
 
 ### Storage Class for Object Storage
-- S3 Standard: for frequently accessed data
-- S3 Standard-IA: infrequent-access
-- S3 One-Zone IA: cheaper
-- S3 Intelligent-Tiering*: for data storage with unknown pattern, will dynamically 
-- S3 Glacier/ S3 Glacier Deep Archive - for archival data, for data not frequently used
+- S3 Standard: for frequently accessed data, store data in minimum of 3 AZ
+- S3 Standard-IA: infrequent-access, store data in minimum of 3 AZ
+- S3 One-Zone IA: cheaper, stores data in a single AZ
+- S3 Intelligent-Tiering*: for data storage with unknown access pattern, will dynamically switch to S3 Stanard or S3 Standard-IA depends on the access pattern
+- S3 Glacier/ S3 Glacier Deep Archive - for archival data, for data not frequently used 
+- Glacier (retrieve object within minutes-hours), Glacier Deep Archive (retrieve object within 12 hours)
 
 ### File Storage
 - clients can access data that is stored in shared file folders
 - AWS Elastic File System (EFS): store data in scalable file system
-- EBS volume store data in single Availabilty Zone, EFS store data across multiple Availability Zone
+- EBS volume store data in Single Availabilty Zone, EFS store data across Multiple Availability Zone (Regional Service)
 
 ## Database
 ### Relational Database
-- use SQL to organize data
-- AWS Relational Database Service (RDS): backup of database
-- RDS database engines: PostgreSQL, MySQL, MariaDB, Amazon Aurora (support MySQL & PostgreSQL)
+- use Structured Query Language SQL to store/ query/ organize data
+- AWS Relational Database Service (RDS): setup, patching & backup of database
+- offers data encryption when stored & encryption in transit
+- RDS database engines: PostgreSQL, MySQL, MariaDB, Amazon Aurora (support MySQL & PostgreSQL), Oracle DB, Microsoft SQL Server
+- Amazon Aurora: replicates six copies of your data across three Availability Zones and continuously backs up your data to Amazon S3
 
 ### Non-relational Database
-- use structure other than rows & columns
-- data organized into key and values
-- Amazon DynamoDB: serverless key-value database
+- use structure other than rows & columns to organize data
+- data organized into key-value pairs
+- Amazon DynamoDB: serverless key-value database, auto-scaling available
 
 ### AWS Database Migration Service (DMS)
 - migrate data stores, allow schema convertion like from MySQL to Aurora
 
 ### Additional Database Service
-- Amazon Redshift: query & analyze data across a data warehouse
-- Amazon DocumentDB: run MongoDB
-- Amazon Neptune: highly connected datasets
-- Amazon QLDB: review complete hostry of changes in database
+- Amazon Redshift: data warehousing service for big data analytics
+- Amazon DocumentDB: run & support MongoDB
+- Amazon Neptune: graph database service, for highly connected datasets
+- Amazon QLDB: review complete history of changes in database
 - Amazon Managed Blockchain: decentralized database
-- Amazon ElastiCache: caching layer
-- Amazon DynamoDB Accelerator: improve DynamoDB response time
+- Amazon ElastiCache: add caching layer to db to improve read times of request, like Redis & Memcached
+- Amazon DynamoDB Accelerator: improve DynamoDB response time via in-memory cache
 
 ## Security
 - shared responsibility model between AWS & customer
