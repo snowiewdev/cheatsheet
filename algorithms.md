@@ -137,3 +137,6 @@ printLinkedList(a);    // with show A, B, C, D
 ## Graphs
 
 ## Trees
+- undirected acyclic connected graph
+- Root node (top node), Child node, Parent node, Leaf node (node without children), Subtree
+- example Binary Search Tree (BST), average O(log(n))
