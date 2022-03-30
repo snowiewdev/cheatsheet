@@ -188,12 +188,13 @@ Client Packet -> Internet Gateway -> Network ACL -> Security group -> public sub
 
 ## Security
 - shared responsibility model between AWS & customer
-- AWS: network infrastructure, edge
-- customer: patching software, HTTP to HTTPS
+- AWS responsibility: security of the cloud, responsible for protecting the global infrastructure of AWS Cloud, like physical infrastructure
+- Customer responsibility: security of everything that they create & put in the AWS Cloud (security in the cloud), like data/content, AWS service chosen, asset permission, patching software, HTTP to HTTPS
 
-### IAM
-- root user: only one, create first IAM user & give permission to other user
-- IAM user
+### AWS Identity and Access Management (IAM)
+- used to manage access to AWS service & resource securely
+- Root User: only one, create first IAM user & give permission to other user (complete access to all the AWS services and resources in account)
+- IAM User: identity that you create in AWS, default has no permissions, need to grant IAM user necessary permission
 - IAM Policy: a document that control access permission (grant/denies) of users
 - IAM group: collection of IAM users, & attach IAM policy to that group for easier management
 - IAM role: assume role & permission
