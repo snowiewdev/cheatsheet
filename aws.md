@@ -1,3 +1,5 @@
+# AWS Cloud Practitioner Notes
+
 ## Client-server Model
 - client: web browser/desktop application that make requests to computer server
 - server: can be Amazon EC2, like virtual server
