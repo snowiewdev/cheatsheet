@@ -37,9 +37,9 @@
 
 ### Pricing Options
 - On-Demand: for short-term, irregular worklaod that cannot be interrupted(first time)
-- Spot Instance: can withstand interruption, for testing or short-term use with flexible start & end times
+- Spot Instance: can withstand interruption, for testing or short-term use with flexible start & end times, saves 90%
 - Savings Plan: have discount package over on-demannd pricing (1 or 3 year term)
-- Dedicated Instance/ Reserved Instance: biling discount with (1 or 3 year term)
+- Dedicated Instance/ Reserved Instance: biling discount with (1 or 3 year term),  do not require you to commit to consistent amount of compute usage over the contract duration
 - Dedicated Server: physical server with EC2 fully dedicated for your use
 
 ### Auto-Scaling
@@ -138,7 +138,7 @@ Client Packet -> Internet Gateway -> Network ACL -> Security group -> public sub
 
 ### Block storage 
 - = Hard disk
-- Instance store: store data only when running, once instance is turned off, data will be gone, like RAM
+- Instance Store: store temporary data only when running, once instance is turned off, data will be gone, like RAM
 - Elastic Block store: store things permanently
 - EBS snapshot: incremental backup of data, first backup = full backup, subsequent backup: only data that has changed recently is backed up
 
@@ -235,6 +235,11 @@ Client Packet -> Internet Gateway -> Network ACL -> Security group -> public sub
 ### AWS Trusted Advisor
 - provide real-time guidance for improving AWS environment
 - guidance/checking on 5 areas, i.e. cost optimization, performance, security, fault torlerance, service limit
+- cost estimation: checks for unused or idle resources that could be eliminated and provide cost savings
+- performance: recommendations for how to take advantage of provisioned throughput
+- security: review your permissions and identify which AWS security features to enable
+- fault tolerance:  improve your applications’ availability and redundancy
+- service limit:
 
 ## Pricing & Support
 - pay as you go, only charge on data transferring out
@@ -247,12 +252,28 @@ Client Packet -> Internet Gateway -> Network ACL -> Security group -> public sub
 - Enterprise Support: has Technical Account Manager (TAM) support
 - AWS Marketplace: provide listing of third-party software that runs on AWS, e.g. data analytics
 - Consolidated billing: combine usage across amount to get discount
+- AWS Organization: used to centrally control permissions for the accounts in your organization by using service control policies (SCPs), e.g consolidated billing to combine usage and receive a single bill for multiple AWS accounts
 
 ## Migration
-- 6 areas to consider for cloud migration to AWS
-- Business perspective: business, people (staffs), governance
-- Technical perspective: platform, security, operations (minimize workload?)
-- Six Migration Stratgies to identify whether migration is needed: rehost, replatform, reafactor/rearchitect, repurchase (need migration) || retain, retire (No need migration)
+- AWS Cloud Adoption Framework: 6 areas to consider for cloud migration to AWS
+
+###  Business perspective
+- Business: move from a model that separates business and IT strategies into a business model that integrates IT strategy
+- People (staffs)
+- Governance
+
+### Technical perspective
+- Platform
+- Security
+- Operations: minimize workload
+
+### Migration Stratgies
+- Six Migration Stratgies to identify whether migration is needed
+- Rehost, replatform, reafactor/rearchitect, repurchase (need migration) 
+- retain, retire (No need migration)
+- Rehosting: moving an application to the cloud with little to no modifications to the application
+- Replatform: selectively optimizing aspects of an application to achieve benefits in the cloud without changing the application core architecture
+- Refactoring: change how an application is architected and developed
 
 ### AWS Snow Family
 - Physical Device that helps you to transfer data/ migration
@@ -261,11 +282,21 @@ Client Packet -> Internet Gateway -> Network ACL -> Security group -> public sub
 - AWS Snowmobile: transfer up to 100PB of Data
 
 ### Well-Architect Framework
-- Operational Excellence: run & monitor system
+- Operational Excellence: run workload effectively & monitor system
 - Security: protect information & assets, permission
-- Reliability: recovery procedure, stability, able to scale
-- Performance efficiency
+- Reliability: ability of a workload to consistently and correctly perform its intended functions, like recovery procedure, stability, able to scale
+- Performance efficiency: use computing resources efficiently to meet system requirements, & maintain that efficiency as demand changes and technologies evolve
 - Cost Optimization
+
+## Additional Service
+### Amazon Augmented AI
+- used to create workflows for machine learning models built on Amazon SageMaker or any other tools
+
+### Amazon Textract
+- machine learning service that automatically extracts text and data from scanned documents
+
+### Amazon Lex
+- allow you to build conversational interfaces using voice and text
 
 ### Exam notes
 - max score 1000, 700 passing score
