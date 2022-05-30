@@ -146,11 +146,11 @@ printLinkedList(a);    // with show A, B, C, D
 - O(log(n))
 
 ## XOR (^)
--> x = 4 => 100
--> y = 2 => 010
--> x ^ y => 110 => 6
--> x ^ x => 000 (***same number XOR will always be 0***)
--> x ^ 0 => 100 
+- x = 4 => 100
+- y = 2 => 010
+- x ^ y => 110 => 6
+- x ^ x => 000 (***same number XOR will always be 0***)
+- x ^ 0 => 100 
 
 Find Single Number:
 ```
