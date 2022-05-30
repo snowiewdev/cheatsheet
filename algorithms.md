@@ -140,3 +140,24 @@ printLinkedList(a);    // with show A, B, C, D
 - undirected acyclic connected graph
 - Root node (top node), Child node, Parent node, Leaf node (node without children), Subtree
 - example Binary Search Tree (BST), average O(log(n))
+
+## Binary Search
+- 3 pointers, left + right + mid pointers
+- O(log(n))
+
+## XOR (^)
+-> x = 4 => 100
+-> y = 2 => 010
+-> x ^ y => 110 => 6
+-> x ^ x => 000 (***same number XOR will always be 0***)
+-> x ^ 0 => 100 
+
+Find Single Number:
+var singleNumber = function(nums) {
+    let ans = 0;
+    for (let i=0; i < nums.length; i++){
+        ans^=nums[i];
+        console.log(ans);
+    };
+    return ans;
+};
