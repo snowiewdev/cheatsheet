@@ -205,5 +205,15 @@ Switch to the target branch and then:
 git push origin -u new-name
 ```
 
+## Change remote origin
+Check current origin
+```
+git remote -v
+```
 
+Change remote origin to another git repo
+```
+git remote set-url origin git@github.com:snowiewdev/xxxx.git
+```
 
+Then just git add, commit & push to the new place
