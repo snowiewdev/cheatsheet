@@ -12,3 +12,4 @@ https://chrome.google.com/webstore/category/extensions
 8. React Developer Tools
 9. Loom
 10. Apollo Client Devtools
+11. Lorem Ipsum Generator
