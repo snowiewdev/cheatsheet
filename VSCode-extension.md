@@ -2,7 +2,7 @@
 
 1. Live Server
 2. Material Icon Theme
-3. Prettier - Code formatter
+3. Prettier - Code formatter  
 4. Bracket Pair Colorizer
 5. Formatting Toggle
 6. Tabnine AI Autocomplete for Javascript, Python, Typescript, PHP, Go, Java, Ruby & more
@@ -27,3 +27,6 @@
 25. Pieces 
 26. Code Runner
 27. Docker
+
+Note:
+For Prettier, cmd + shift + p , type 'open setting' & choose 'open user setting' & add 'Prettier' config in the setting.json
