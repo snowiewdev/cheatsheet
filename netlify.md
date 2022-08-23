@@ -7,3 +7,10 @@ command = “CI= npm run build”
 ```
 
 2. Push your code to Github and choose site deployment from netlify
+
+
+## Netlify CLI
+```
+npm i netlify-cli -g
+netlify deploy
+```
